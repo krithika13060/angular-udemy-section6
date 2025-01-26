@@ -1,0 +1,17 @@
+<div>
+    <ul>
+        @for (ticket of tickets; track ticket.id){
+        <li>
+            <app-ticket></app-ticket>
+            <!-- {{$first}} last, even, true, count - for array -->
+        </li>
+        }
+        <!-- if array is empty -->
+        @empty {
+        <p>No tickets are available</p>
+        }
+    </ul>
+</div>
+<div id="new-ticket">
+    <app-new-ticket (add)="onAdd($event)"></app-new-ticket>
+</div>
