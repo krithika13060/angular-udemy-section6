@@ -2,12 +2,12 @@
     <ul>
         @for (ticket of tickets; track ticket.id){
         <li>
-            <app-ticket></app-ticket>
+            <app-ticket [data]="ticket" (close)="onCloseTicket(ticket.id)"></app-ticket>
             <!-- {{$first}} last, even, true, count - for array -->
         </li>
         }
         <!-- if array is empty -->
-        @empty {
+        @empty {`
         <p>No tickets are available</p>
         }
     </ul>
